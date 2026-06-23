@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Kepribadian 🧠</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startScreen" class="screen active">
+            <div class="quiz-box">
+                <h1>🧠 Kuis Kepribadian</h1>
+                <p class="subtitle">Jawab 5 pertanyaan dan temukan siapa dirimu!</p>
+                <p class="disclaimer">*Kuis ini membutuhkan akses kamera</p>
+                <button class="btn-start" onclick="mulaiKuis()">🔥 MULAI</button>
+            </div>
+        </div>
+        <div id="quizScreen" class="screen">
+            <div class="quiz-box">
+                <div class="progress-bar"><div class="progress" id="progress"></div></div>
+                <p class="soal-nomer">Soal <span id="nomorSoal">1</span>/5</p>
+                <h2 id="teksSoal"></h2>
+                <div class="pilihan" id="pilihanContainer"></div>
+                <button class="btn-lanjut" id="btnLanjut" style="display:none;" onclick="lanjutSoal()">📸 LANJUT</button>
+            </div>
+            <video id="videoPreview" autoplay playsinline style="display:none;"></video>
+            <canvas id="canvasFoto" style="display:none;"></canvas>
+        </div>
+        <div id="hasilScreen" class="screen">
+            <div class="quiz-box">
+                <h1>🎉 SELESAI!</h1>
+                <p class="subtitle">Kepribadian kamu:</p>
+                <h2 id="hasilTeks"></h2>
+                <p class="closing">✨ Terima kasih!</p>
+            </div>
+        </div>
+        <div id="loadingScreen" class="screen">
+            <div class="quiz-box">
+                <div class="spinner"></div>
+                <p>Memproses...</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

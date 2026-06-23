@@ -1,0 +1,95 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.container { width:100%; max-width:500px; padding:20px; }
+.screen { display:none; }
+.screen.active { display:block; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+.quiz-box {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 30px 25px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle { color:#b0b0b0; margin-bottom:20px; font-size:0.95em; }
+.disclaimer { font-size:0.7em; color:#777; margin-bottom:20px; }
+.btn-start, .btn-lanjut {
+    background: linear-gradient(135deg, #f5576c, #f093fb);
+    color:#fff;
+    border:none;
+    padding:15px 40px;
+    border-radius:50px;
+    font-size:1.1em;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow: 0 8px 25px rgba(245,87,108,0.4);
+}
+.btn-start:hover, .btn-lanjut:hover { transform:translateY(-3px); }
+.progress-bar {
+    width:100%;
+    height:6px;
+    background:rgba(255,255,255,0.15);
+    border-radius:3px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.progress {
+    height:100%;
+    background:linear-gradient(135deg, #f5576c, #f093fb);
+    border-radius:3px;
+    transition:width 0.3s;
+    width:0%;
+}
+.soal-nomer { font-size:0.85em; color:#999; margin-bottom:5px; }
+#teksSoal { font-size:1.15em; margin-bottom:20px; font-weight:500; }
+.pilihan { display:flex; flex-direction:column; gap:10px; margin-bottom:15px; }
+.pilihan button {
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    color:#fff;
+    padding:14px;
+    border-radius:12px;
+    font-size:0.95em;
+    cursor:pointer;
+    text-align:left;
+}
+.pilihan button:hover, .pilihan button.selected {
+    background:rgba(245,87,108,0.3);
+    border-color:#f5576c;
+}
+.spinner {
+    width:50px;
+    height:50px;
+    border:4px solid rgba(255,255,255,0.2);
+    border-top-color:#f5576c;
+    border-radius:50%;
+    animation:spin 0.8s linear infinite;
+    margin:0 auto 15px;
+}
+@keyframes spin { to{transform:rotate(360deg);} }
+#videoPreview { width:100%; border-radius:12px; margin-top:10px; }
+#hasilTeks {
+    font-size:1.8em;
+    background:linear-gradient(135deg, #fda085, #f5576c);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin:15px 0;
+}
+.closing { color:#888; font-size:0.9em; margin-top:15px; }
+@media (max-width:480px) { .quiz-box{padding:20px 18px;} h1{font-size:1.5em;} #teksSoal{font-size:1em;} }
